@@ -22,7 +22,9 @@ class SideMenu extends StatelessWidget {
           ListTile(
             leading:Icon(Icons.home),
             title: const Text('Home'),
-            onTap: (){},
+            onTap: (){
+              Navigator.pushNamed(context, '/');
+            },
           ),
           ListTile(
             leading:Icon(Icons.notes),
