@@ -29,7 +29,9 @@ class SideMenu extends StatelessWidget {
           ListTile(
             leading:Icon(Icons.notes),
             title: const Text('Recipes'),
-            onTap: (){},
+            onTap: (){
+              Navigator.pushNamed(context, '/recipes');
+            },
           ),
           ListTile(
             leading:Icon(Icons.shopping_cart),

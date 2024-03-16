@@ -1,6 +1,7 @@
 import 'package:cookbookapp/lists.dart';
 import 'package:cookbookapp/menu.dart';
 import 'package:cookbookapp/onboarding.dart';
+import 'package:cookbookapp/recipes.dart';
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const MyHomePage(title: 'Cookbook App'),
         '/onboarding': (context) => const OnboardingScreen(),
-        '/lists': (context) => ListScreen()
+        '/lists': (context) => ListScreen(),
+        '/recipes': (context) => RecipeScreen(),
         },
     );
   }
