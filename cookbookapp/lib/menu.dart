@@ -41,6 +41,13 @@ class SideMenu extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.favorite_border),
+            title: const Text('Favorites'),
+            onTap: () {
+              Navigator.pushNamed(context, '/favs');
+            },
+          ),
+          ListTile(
             leading:Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: (){},
