@@ -1,3 +1,4 @@
+import 'package:cookbookapp/favorites.dart';
 import 'package:cookbookapp/lists.dart';
 import 'package:cookbookapp/menu.dart';
 import 'package:cookbookapp/onboarding.dart';
@@ -17,7 +18,8 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider<UserList>(create: (_) => UserList())
+        ChangeNotifierProvider<UserList>(create: (_) => UserList()),
+        ChangeNotifierProvider<FavoriteList>(create: (_) => FavoriteList())
 
       ],
       child: const MyApp()
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/onboarding': (context) => const OnboardingScreen(),
         '/lists': (context) => ListScreen(),
         '/recipes': (context) => RecipeScreen(),
+        '/favs':(context) => FavoriteScreen(),
         },
     );
   }

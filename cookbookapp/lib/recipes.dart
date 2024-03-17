@@ -2,6 +2,24 @@ import 'package:cookbookapp/meal_model.dart';
 import 'package:cookbookapp/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+//class meant to add to favorites list
+class FavoriteList extends ChangeNotifier {
+  List<MealRecipe> mealList = [];
+
+  void addFav(MealRecipe recipe) {
+    mealList.add(recipe);
+    notifyListeners();
+  }
+
+  void removeRecipe(MealRecipe index) {
+    mealList.remove(index);
+    notifyListeners();
+  }
+}
+
+
 
 class RecipeScreen extends StatefulWidget {
   const RecipeScreen({super.key});
@@ -139,6 +157,8 @@ class _RecipeScreenState extends State<RecipeScreen> {
   }
 }
 
+
+
 //screen that shows filter results
 class FilterScreen extends StatefulWidget {
   final List<MealRecipe> filtered;
@@ -196,8 +216,9 @@ class _FilterScreenState extends State<FilterScreen> {
   }
 }
 
-//screen for recipe details
 
+
+//screen for recipe details
 class RecipeDetails extends StatefulWidget {
   final MealRecipe currentRecipe;
   RecipeDetails(this.currentRecipe);
@@ -242,6 +263,30 @@ class _RecipeDetailsState extends State<RecipeDetails> {
                   leading: const Icon(Icons.timer),
                   title: const Text('Duration'),
                   subtitle: Text(widget.currentRecipe.duration)),
+              InkWell(
+                onTap: () {
+
+                  setState(() {
+                    widget.currentRecipe.favorite = !widget.currentRecipe.favorite;
+                  });
+
+                  if (widget.currentRecipe.favorite == true) {
+                    Provider.of<FavoriteList>(context, listen: false)
+                        .addFav(widget.currentRecipe);
+                  } else {
+                    Provider.of<FavoriteList>(context, listen: false)
+                        .removeRecipe(widget.currentRecipe);
+                  }
+                },
+                child: Card(
+                  child: ListTile(
+                    leading: widget.currentRecipe.favorite
+                        ? Icon(Icons.favorite, color: Colors.red)
+                        : Icon(Icons.favorite_border, color: Colors.red,),
+                    title: const Text('Favorite This Recipe!'),
+                  ),
+                ),
+              ),
               const SizedBox(height: 40),
               Text(
                 'Ingredients:',

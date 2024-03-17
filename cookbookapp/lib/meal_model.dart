@@ -1,6 +1,6 @@
-//import 'package:cookbookapp/recipes.dart';
-
+//create a boolean variable for each recipe to indicate favorite
 class MealRecipe {
+  bool favorite;
   String imgSrc;
   String name;
   List<String> category;
@@ -9,7 +9,8 @@ class MealRecipe {
   String directions;
 
   MealRecipe(
-      {required this.imgSrc,
+      {required this.favorite,
+      required this.imgSrc,
       required this.name,
       required this.category,
       required this.duration,
@@ -20,6 +21,7 @@ class MealRecipe {
     final List<MealRecipe> recipeList = [];
 
     MealRecipe recipe1 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/brocsoup.png',
         name: 'Broccoli Cheddar Soup',
         category: ['Vegetarian'],
@@ -43,6 +45,7 @@ class MealRecipe {
     recipeList.add(recipe1);
 
     MealRecipe recipe2 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/veggiechilli.png',
         name: 'Vegetarian Chilli',
         category: ['Vegetarian', 'Vegan', 'Dairy Free'],
@@ -68,6 +71,7 @@ class MealRecipe {
     recipeList.add(recipe2);
 
     MealRecipe recipe3 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/enchiladas.png',
         name: 'Black Bean Enchiladas',
         category: ['Vegetarian'],
@@ -94,6 +98,7 @@ class MealRecipe {
     recipeList.add(recipe3);
 
     MealRecipe recipe4 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/veggiefajitas.png',
         name: 'Vegetable Fajitas',
         category: ['Vegetarian', 'Vegan', 'Dairy Free'],
@@ -118,6 +123,7 @@ class MealRecipe {
     recipeList.add(recipe4);
 
     MealRecipe recipe5 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/veganpizza.png',
         name: 'Vegan Pizza',
         category: ['Vegetarian', 'Vegan', 'Gluten Free', 'Dairy Free'],
@@ -138,6 +144,7 @@ class MealRecipe {
     recipeList.add(recipe5);
 
     MealRecipe recipe6 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/veganrice.png',
         name: 'Vegan Fried Rice',
         category: ['Vegan', 'Vegetarian', 'Dairy Free'],
@@ -160,6 +167,7 @@ class MealRecipe {
     recipeList.add(recipe6);
 
     MealRecipe recipe7 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/paella.png',
         name: 'Seafood Paella',
         category: ['Pescatarian', 'Dairy Free'],
@@ -186,6 +194,7 @@ class MealRecipe {
     recipeList.add(recipe7);
 
     MealRecipe recipe8 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/shrimpscampi.png',
         name: 'Shrimp Scampi',
         category: ['Pescatarian'],
@@ -207,6 +216,7 @@ class MealRecipe {
     recipeList.add(recipe8);
 
     MealRecipe recipe9 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/lobsterroll.png',
         name: 'Lobster Roll',
         category: ['Pescatarian'],
@@ -229,6 +239,7 @@ class MealRecipe {
     recipeList.add(recipe9);
 
     MealRecipe recipe10 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/chickenparm.png',
         name: 'Chicken Parmesan',
         category: [],
@@ -251,6 +262,7 @@ class MealRecipe {
     recipeList.add(recipe10);
 
     MealRecipe recipe11 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/beefstew.png',
         name: 'Beef Stew',
         category: [],
@@ -275,6 +287,7 @@ class MealRecipe {
     recipeList.add(recipe11);
 
     MealRecipe recipe12 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/burrito.png',
         name: 'Steak and Bean Burritos',
         category: ['Dairy Free'],
@@ -300,6 +313,7 @@ class MealRecipe {
     recipeList.add(recipe12);
 
     MealRecipe recipe13 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/stuffedpeppers.png',
         name: 'Classic Stuffed Peppers',
         category: ['Gluten Free'],
@@ -318,6 +332,7 @@ class MealRecipe {
     recipeList.add(recipe13);
 
     MealRecipe recipe14 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/sphagetti.png',
         name: 'Sphaghetti Bolognese',
         category: ['Dairy Free'],
@@ -343,6 +358,7 @@ class MealRecipe {
     recipeList.add(recipe14);
 
     MealRecipe recipe15 = MealRecipe(
+        favorite: false,
         imgSrc: 'assets/images/marryme.png',
         name: 'Marry Me Chicken',
         category: ['Gluten Free'],
